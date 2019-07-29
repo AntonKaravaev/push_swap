@@ -1,11 +1,17 @@
 NAME = push_swap
 
 SRCS = 	push_swap.c\
-		parselines.c
+		parselines.c\
+		supfun1.c\
+		supfun2.c\
+		supfun3.c
 
 
 OBJ = 	push_swap.o\
 		parselines.o\
+		supfun1.o\
+		supfun2.o\
+		supfun3.o
 
 
 INC = includes/

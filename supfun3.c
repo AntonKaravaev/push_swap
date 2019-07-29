@@ -1,33 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   supfun3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/24 22:25:23 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/07/30 01:42:29 by crenly-b         ###   ########.fr       */
+/*   Created: 2019/07/30 00:49:35 by crenly-b          #+#    #+#             */
+/*   Updated: 2019/07/30 00:50:12 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-int			main(int argc, char *argv[])
+void	ft_rrr(t_p *p)
 {
-	t_p p;
+	ft_rra(p);
+	ft_rrb(p);
+}
 
-	if (argc > 1)
+void		ft_printmassive(t_p *p)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	printf("aa massive = \n");
+	printf("p->anum = %d \n", p->anum);
+	while (i < p->anum)
 	{
-		ft_parselines(argc, argv, &p);
-		ft_checkduplicates(&p);
-		ft_createmasb(&p);
+		printf("%d ", p->mas_a[i]);
+		i++;
 	}
-	else
-		write(1, "Error\n", 6);
-	ft_ra(&p);
-	ft_ra(&p);
-	ft_ra(&p);
-	ft_printmassive(&p);
-	return (0);
+	printf("\n");
+	printf("bb massive = \n");
+	printf("p->bnum = %d \n", p->bnum);
+	while (j < p->bnum)
+	{
+		printf("%d ", p->mas_b[j]);
+		j++;
+	}
+	printf("\n");
 }
