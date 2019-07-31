@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/30 00:28:18 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/07/30 22:19:48 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/07/31 15:30:52 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_ss(t_p *p)
 {
 	int temp;
 
-	if (p->anum >= 2 && p->bnum >= 2)
+	if (p->anum >= 2)
 	{
 		if (p->mas_a[0] > p->mas_a[1])
 		{
@@ -54,6 +54,9 @@ void	ft_ss(t_p *p)
 			p->mas_a[0] = p->mas_a[1];
 			p->mas_a[1] = temp;
 		}
+	}
+	if (p->bnum >= 2)
+	{
 		if (p->mas_b[0] > p->mas_b[1])
 		{
 			temp = p->mas_a[0];
@@ -84,7 +87,7 @@ void	ft_pa(t_p *p)
 		i = -1;
 		p->bnum--;
 		p->anum++;
-		while (i++ < p->bnum)
+		while (++i < p->bnum)
 			p->mas_b[i] = p->mas_b[i + 1];
 	}
 }
@@ -110,7 +113,7 @@ void	ft_pb(t_p *p)
 		i = -1;
 		p->anum--;
 		p->bnum++;
-		while (i++ < p->anum)
+		while (++i < p->anum)
 			p->mas_a[i] = p->mas_a[i + 1];
 	}
 }

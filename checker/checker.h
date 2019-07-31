@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 22:29:47 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/07/30 23:25:22 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/07/31 17:28:50 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,9 @@ typedef struct	s_p
 }				t_p;
 
 int				main(int argc, char *argv[]);
-void			ft_parselines(int ac, char **line, t_p *p);
-void			ft_checkduplicates(t_p *p);
-void			ft_createmasb(t_p *p);
-void			ft_allreadesorted(t_p *p);
+void			ft_parser(int ac, char **line, t_p *p);
+void			ft_worker(char **line, t_p *p);
+void			ft_sorted(t_p *p);
 void			ft_sa(t_p *p);
 void			ft_sb(t_p *p);
 void			ft_ss(t_p *p);
@@ -40,8 +39,8 @@ void			ft_rr(t_p *p);
 void			ft_rra(t_p *p);
 void			ft_rrb(t_p *p);
 void			ft_rrr(t_p *p);
-
-
+void			ft_error(t_p *p);
+void			ft_freebufs(t_p *p);
 void			ft_printmassive(t_p *p); // delete after finishing
 
 
