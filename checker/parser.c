@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 02:29:50 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/07/31 17:55:32 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/01 22:11:14 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,9 @@ static void		ft_checkduplicates(t_p *p)
 		while (++j < p->anum)
 		{
 			if ((p->mas_a[i] == p->mas_a[j]) && (i != j))
-				ft_error(p);
+				ft_error();
 		}
 	}
-}
-
-static	void	ft_createmasb(t_p *p)
-{
-	if (!(p->mas_b = (int *)malloc(sizeof(int) * p->anum)))
-		ft_error(p);
-	p->bnum = 0;
 }
 
 static void		ft_allreadesorted(t_p *p)
@@ -48,7 +41,7 @@ static void		ft_allreadesorted(t_p *p)
 		else
 			return ;
 	}
-	ft_error(p);
+	ft_error();
 }
 
 static void		ft_parseoneline(char **line, t_p *p)
@@ -71,7 +64,7 @@ static void		ft_parseoneline(char **line, t_p *p)
 		ft_strdel(str);
 	}
 	else
-		ft_error(p);
+		ft_error();
 }
 
 void			ft_parser(int ac, char **line, t_p *p)
@@ -79,6 +72,10 @@ void			ft_parser(int ac, char **line, t_p *p)
 	int	i;
 
 	i = 0;
+	p->anum = 0;
+	p->bnum = 0;
+	p->mas_a = NULL;
+	p->mas_b = NULL;
 	if (ac == 2)
 		ft_parseoneline(&line[1], p);
 	else
@@ -90,8 +87,7 @@ void			ft_parser(int ac, char **line, t_p *p)
 		p->anum = i;
 	}
 	if (p->anum == 1)
-		ft_error(p);
+		ft_error();
 	ft_checkduplicates(p);
 	ft_allreadesorted(p);
-	ft_createmasb(p);
 }

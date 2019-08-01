@@ -1,6 +1,6 @@
 #include "checker.h"
 
-static void	ft_intstrdel(int **as)
+void		ft_intstrdel(int **as)
 {
 	if (as)
 	{
@@ -18,10 +18,8 @@ void		ft_freebufs(t_p *p)
 	ft_intstrdel(&p->mas_b);
 }
 
-void		ft_error(t_p *p)
+void		ft_error()
 {
-	ft_intstrdel(&p->mas_a);
-	ft_intstrdel(&p->mas_b);
 	write(1, "Error\n", 6);
 	exit (-1);
 }

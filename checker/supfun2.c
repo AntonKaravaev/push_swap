@@ -6,47 +6,11 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/30 00:30:53 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/07/30 22:19:47 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/01 19:50:34 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-void	ft_ra(t_p *p)
-{
-	int i;
-	int temp;
-
-	i = 0;
-	if (p->anum > 0)
-	{
-		temp = p->mas_a[0];
-		while (i < p->anum - 1)
-		{
-			p->mas_a[i] = p->mas_a[i + 1];
-			i++;
-		}
-		p->mas_a[i] = temp;
-	}
-}
-
-void	ft_rb(t_p *p)
-{
-	int i;
-	int temp;
-
-	i = 0;
-	if (p->bnum > 0)
-	{
-		temp = p->mas_b[0];
-		while (i < p->bnum - 1)
-		{
-			p->mas_b[i] = p->mas_b[i + 1];
-			i++;
-		}
-		p->mas_b[i] = temp;
-	}
-}
 
 void	ft_rr(t_p *p)
 {
@@ -94,4 +58,10 @@ void	ft_rrb(t_p *p)
 			i++;
 		}
 	}
+}
+
+void	ft_rrr(t_p *p)
+{
+	ft_rra(p);
+	ft_rrb(p);
 }

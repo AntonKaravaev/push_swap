@@ -6,8 +6,9 @@ SRCS = 	main.c\
 		freebufs.c\
 		supfun1.c\
 		supfun2.c\
-		supfun3.c
-
+		supfun3.c\
+		ft_pa_supfun4.c\
+		ft_pb_supfun5.c
 
 OBJ = 	main.o\
 		parser.o\
@@ -15,8 +16,9 @@ OBJ = 	main.o\
 		freebufs.o\
 		supfun1.o\
 		supfun2.o\
-		supfun3.o
-
+		supfun3.o\
+		ft_pa_supfun4.o\
+		ft_pb_supfun5.o
 
 INC = includes/
 

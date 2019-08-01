@@ -1,5 +1,28 @@
 #include "checker.h"
 
+static void		ft_sorted(t_p *p)
+{
+	int i;
+
+	i = 0;
+	if (p->anum > 1)
+	{
+		while (i < p->anum - 1)
+		{
+			if (p->mas_a[i] < p->mas_a[i + 1] && p->bnum == 0)
+				i++;
+			else
+			{
+				write(1, "KO\n", 3);
+				return ;
+			}
+		}
+		write(1, "OK\n", 3);
+	}
+	else
+		write(1, "KO\n", 3);
+}
+
 static void		ft_whattodo(char **line, t_p *p)
 {
 	if (ft_strequ(*line, "sa\0") == 1)
@@ -25,7 +48,7 @@ static void		ft_whattodo(char **line, t_p *p)
 	else if (ft_strequ(*line, "rrr\0") == 1)
 		ft_rrr(p);
 	else
-		ft_error(p);
+		ft_error();
 }
 
 void			ft_worker(char **line, t_p *p)
