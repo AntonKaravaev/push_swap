@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/30 00:28:18 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/07/30 00:28:20 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/02 04:18:33 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_ss(t_p *p)
 {
 	int temp;
 
-	if (p->anum >= 2 && p->bnum >= 2)
+	if (p->anum >= 2)
 	{
 		if (p->mas_a[0] > p->mas_a[1])
 		{
@@ -54,6 +54,9 @@ void	ft_ss(t_p *p)
 			p->mas_a[0] = p->mas_a[1];
 			p->mas_a[1] = temp;
 		}
+	}
+	if (p->bnum >= 2)
+	{
 		if (p->mas_b[0] > p->mas_b[1])
 		{
 			temp = p->mas_a[0];
@@ -63,54 +66,38 @@ void	ft_ss(t_p *p)
 	}
 }
 
-void	ft_pa(t_p *p)
+void	ft_ra(t_p *p)
 {
 	int i;
+	int temp;
 
-	if (p->bnum > 0)
+	i = 0;
+	if (p->anum > 0)
 	{
-		if (p->anum == 0)
-			p->mas_a[0] = p->mas_b[0];
-		else
+		temp = p->mas_a[0];
+		while (i < p->anum - 1)
 		{
-			i = p->anum;
-			while (i)
-			{
-				p->mas_a[i] = p->mas_a[i - 1];
-				i--;
-			}
-			p->mas_a[0] = p->mas_b[0];
+			p->mas_a[i] = p->mas_a[i + 1];
+			i++;
 		}
-		i = -1;
-		p->bnum--;
-		p->anum++;
-		while (i++ < p->bnum)
-			p->mas_b[i] = p->mas_b[i + 1];
+		p->mas_a[i] = temp;
 	}
 }
 
-void	ft_pb(t_p *p)
+void	ft_rb(t_p *p)
 {
 	int i;
+	int temp;
 
-	if (p->anum > 0)
+	i = 0;
+	if (p->bnum > 0)
 	{
-		if (p->bnum == 0)
-			p->mas_b[0] = p->mas_a[0];
-		else
+		temp = p->mas_b[0];
+		while (i < p->bnum - 1)
 		{
-			i = p->bnum;
-			while (i)
-			{
-				p->mas_b[i] = p->mas_b[i - 1];
-				i--;
-			}
-			p->mas_b[0] = p->mas_a[0];
+			p->mas_b[i] = p->mas_b[i + 1];
+			i++;
 		}
-		i = -1;
-		p->anum--;
-		p->bnum++;
-		while (i++ < p->anum)
-			p->mas_a[i] = p->mas_a[i + 1];
+		p->mas_b[i] = temp;
 	}
 }

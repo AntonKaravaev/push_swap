@@ -6,7 +6,7 @@
 #    By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/09 15:14:49 by crenly-b          #+#    #+#              #
-#    Updated: 2019/07/26 02:28:44 by crenly-b         ###   ########.fr        #
+#    Updated: 2019/07/31 18:09:58 by crenly-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ FILESO =find_ch.o ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o \
 all:$(NAME)
 
 $(NAME):
-	gcc -c $(FLAGS) $(SRCS)
+	gcc -c  -g $(FLAGS) $(SRCS)
 	ar rc $(NAME) $(FILESO)
 	ranlib $(NAME)
 

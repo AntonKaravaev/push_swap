@@ -6,12 +6,11 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 22:25:23 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/01 20:19:28 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/01 22:44:44 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-#include <stdio.h>
 
 int			main(int argc, char *argv[])
 {

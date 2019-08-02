@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   worker.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/01 22:39:13 by crenly-b          #+#    #+#             */
+/*   Updated: 2019/08/01 22:52:19 by crenly-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker.h"
 
 static void		ft_sorted(t_p *p)
@@ -62,7 +74,6 @@ void			ft_worker(char **line, t_p *p)
 		}
 		else
 		{
-			ft_printmassive(p);
 			ft_sorted(p);
 			ft_strdel(line);
 			break ;

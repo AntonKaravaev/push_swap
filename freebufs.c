@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   supfun3.c                                          :+:      :+:    :+:   */
+/*   freebufs.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/30 00:49:35 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/07/30 00:50:12 by crenly-b         ###   ########.fr       */
+/*   Created: 2019/08/01 22:39:43 by crenly-b          #+#    #+#             */
+/*   Updated: 2019/08/02 04:18:09 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rrr(t_p *p)
+void		ft_intstrdel(int **as)
 {
-	ft_rra(p);
-	ft_rrb(p);
+	if (as)
+	{
+		if (*as != NULL)
+		{
+			free(*as);
+			*as = NULL;
+		}
+	}
 }
 
-void		ft_printmassive(t_p *p)
+void		ft_freebufs(t_p *p)
 {
-	int i;
-	int j;
+	ft_intstrdel(&p->mas_a);
+	ft_intstrdel(&p->mas_b);
+}
 
-	i = 0;
-	j = 0;
-	printf("aa massive = \n");
-	printf("p->anum = %d \n", p->anum);
-	while (i < p->anum)
-	{
-		printf("%d ", p->mas_a[i]);
-		i++;
-	}
-	printf("\n");
-	printf("bb massive = \n");
-	printf("p->bnum = %d \n", p->bnum);
-	while (j < p->bnum)
-	{
-		printf("%d ", p->mas_b[j]);
-		j++;
-	}
-	printf("\n");
+void		ft_error(void)
+{
+	write(1, "Error\n", 6);
+	exit(-1);
 }

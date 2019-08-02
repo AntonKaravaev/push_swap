@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:57:03 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/07/15 15:38:29 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/01 19:01:20 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ int		ft_find_line(char **str_read, char **line)
 	char *tmp;
 
 	if ((*str_read)[0] == '\0')
+	{
+		ft_strdel(str_read);
 		return (0);
+	}
 	if (ft_strchr(*str_read, '\n') != NULL)
 	{
 		*(ft_strchr(*str_read, '\n')) = '\0';

@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 02:29:50 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/01 22:11:14 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/01 23:54:40 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void		ft_allreadesorted(t_p *p)
 		else
 			return ;
 	}
-	ft_error();
+	exit(-1);
 }
 
 static void		ft_parseoneline(char **line, t_p *p)
@@ -87,7 +87,7 @@ void			ft_parser(int ac, char **line, t_p *p)
 		p->anum = i;
 	}
 	if (p->anum == 1)
-		ft_error();
+		exit(-1);
 	ft_checkduplicates(p);
 	ft_allreadesorted(p);
 }

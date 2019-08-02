@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 22:25:23 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/07/30 01:42:29 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/02 05:06:56 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int			main(int argc, char *argv[])
 {
-	t_p p;
+	t_p		p;
+	char	*line;
 
+	line = NULL;
 	if (argc > 1)
 	{
-		ft_parselines(argc, argv, &p);
-		ft_checkduplicates(&p);
-		ft_createmasb(&p);
+		ft_parser(argc, argv, &p);
+		ft_worker(&p);
+		// ft_freebufs(&p);
 	}
-	else
-		write(1, "Error\n", 6);
-	ft_ra(&p);
-	ft_ra(&p);
-	ft_ra(&p);
-	ft_printmassive(&p);
 	return (0);
 }

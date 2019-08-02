@@ -6,14 +6,14 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 22:29:47 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/01 20:18:16 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/01 23:57:17 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
-# include "../libft/libft.h"
+# include "libft/libft.h"
 
 typedef struct	s_p
 {
@@ -41,6 +41,5 @@ void			ft_rrr(t_p *p);
 void			ft_error();
 void			ft_freebufs(t_p *p);
 void			ft_intstrdel(int **as);
-void			ft_printmassive(t_p *p); // delete after finishing
 
 #endif
