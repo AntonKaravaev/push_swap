@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 22:39:13 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/04 03:59:58 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/04 07:11:04 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,56 +73,16 @@ void	ft_value_of_position(t_p *p)
 			}
 		}
 	}
-
-	i = -1;
-	// while(++i < p->anum)
-	// {
-	// 	printf("p->sorted[%d] = %d\n", i, p->sorted[i]);
-	// }
-	printf("\n");
 }
 
-// void ft_checkgoodline(t_p *p)
-// {
-// 	int temp;
-// 	int i;
-// 	int j;
-//
-// 	temp = 1;
-// 	i = -1;
-// 	j = 0;
-// 	p->goodline = 1;
-//  	while(++j < p->anum)
-// 	{
-// 		if (p->mas_a[j] == p->mas_a[j + 1] - 1)
-// 			temp++;
-// 		else if (p->mas_a[j] == p->mas_a[j + 1] - 1)
-// 		{
-// 			if (temp > p->goodline)
-// 				p->goodline = temp;
-// 			temp = 1;
-// 		}
-// 	}
-// 	printf("p->goodline = %d\n", p->goodline);
-// }
 int		ft_find_optimal_way(t_p *p, int i)
 {
 	int bot;
 	int top;
 
-	bot = 0;
-	top = 0;
-	if (i <= p->howmuch)
-		bot = i;
-	else
-		bot = -1;
-	if (p->bnum - i <= p->howmuch)
-		top = p->bnum - i;
-	else
-		top = -1;
-	if (bot == -1 && top == -1)
-		return (i);
-	if (bot <= top && bot != -1)
+	bot = i;
+	top = p->bnum - i;
+	if (bot <= top)
 	{
 		while (i != 0)
 		{
@@ -130,7 +90,7 @@ int		ft_find_optimal_way(t_p *p, int i)
 			i--;
 		}
 	}
-	else if (top != -1)
+	else
 	{
 		while (top != 0)
 		{
@@ -138,10 +98,10 @@ int		ft_find_optimal_way(t_p *p, int i)
 			top--;
 		}
 	}
-	return (0);
+	return (1);
 }
 
-void	ft_from_b_to_a(t_p *p, int num) // int num удалть это для проверки идеи
+void	ft_from_b_to_a(t_p *p)
 {
 	int i;
 	int check;
@@ -150,14 +110,13 @@ void	ft_from_b_to_a(t_p *p, int num) // int num удалть это для пр�
 	check = 0;
 	while (++i < p->bnum)
 	{
-		if (p->mas_a[p->anum - 1] + 1  == p->mas_b[i] || (num >= 14 && p->mas_a[0] - 1  == p->mas_b[i]))
-		// второе условие только тогда, когда все сойдется по 0 или MAX
+		if (p->mas_a[p->anum - 1] + 1  == p->mas_b[i]
+			|| (p->mas_a[p->anum - 1] == p->max && p->mas_b[i] == 0))
 		{
-				printf("I was here\n");
 			check = 1;
 			if (check == 1)
 			{
-				if (ft_find_optimal_way(p, i) <= p->howmuch)
+				if (ft_find_optimal_way(p, i))
 					ft_pa(p);
 				return ;
 			}
@@ -165,8 +124,48 @@ void	ft_from_b_to_a(t_p *p, int num) // int num удалть это для пр�
 	}
 }
 
+int		ft_cycle_ok(t_p *p)
+{
+	int i;
 
-void ft_firstcycle(t_p *p)
+	i = 0;
+
+
+	while (i < p->anum - 1)
+	{
+		if (p->bnum == 0 && (p->mas_a[i] == p->mas_a[i + 1] - 1 || (p->mas_a[i] == p->max && p->mas_a[i + 1] == 0)))
+			i++;
+		else
+			return (0);
+	}
+		printf ("Hello\n");
+	return (1);
+}
+
+void		ft_find_zero_pos(t_p *p)
+{
+	int i;
+
+	i = 0;
+	while (i < p->anum)
+	{
+		if (p->mas_a[i] == 0)
+			break;
+		i++;
+	}
+	if (i <= p->anum - i)
+	{
+		while (p->mas_a[0] != 0)
+			ft_ra(p);
+	}
+	else
+	{
+		while (p->mas_a[0] != 0)
+			ft_rra(p);
+	}
+}
+
+void		ft_whirling(t_p *p)
 {
 	int temp;
 	int connection;
@@ -177,29 +176,28 @@ void ft_firstcycle(t_p *p)
 	i = -1;
 	j = 0;
 	connection = 0;
-	p->goodline = 1;
 	temp = p->anum;
- 	while(++i < temp + 5) // подчистить
+ 	while(++i < 19)
 	{
+		if (ft_cycle_ok(p) == 1)
+			break ;
 		if (p->bnum > 0)
-			ft_from_b_to_a(p, i); // i - добавлено исключительно для проверки идеи
-		if (p->mas_a[j] == p->mas_a[j + 1] - 1)
+			ft_from_b_to_a(p);
+		if (p->mas_a[j] == p->mas_a[j + 1] - 1 || (p->mas_a[j] == p->max && p->mas_a[j + 1] == 0))
 		{
-			p->goodline++;
 			if (p->bnum > 1 && p->mas_b[0] > p->mas_b[1])
 				ft_rr(p);
 			else
 				ft_ra(p);
 		}
-		else if (p->mas_a[j] - 1 == p->mas_a[j + 1])
+		else if (p->mas_a[j] - 1 == p->mas_a[j + 1] || (p->mas_a[j] == 0 && p->mas_a[j + 1] == p->max))
 		{
-			p->goodline++;
 			if (p->bnum > 1 && p->mas_b[0] < p->mas_b[1])
 			{
 				ft_ss(p);
 				ft_rr(p);
 			}
-			if (p->bnum > 1 && p->mas_b[0] > p->mas_b[1])
+			else if (p->bnum > 1 && p->mas_b[0] > p->mas_b[1])
 			{
 				ft_sa(p);
 				ft_rr(p);
@@ -210,49 +208,10 @@ void ft_firstcycle(t_p *p)
 				ft_ra(p);
 			}
 		}
-		else if (p->mas_a[j] == 0 && p->mas_a[j + 1] == p->anum - 1)
+		else
 		{
-			p->goodline++;
-			if (p->bnum > 1 && p->mas_b[0] < p->mas_b[1])
+			if ((p->mas_a[j] == p->mas_a[p->anum - 1] + 1) || (p->mas_a[j] == 0 && p->mas_a[p->anum - 1] == p->max))
 			{
-				ft_ss(p);
-				ft_rr(p);
-			}
-			if (p->bnum > 1 && p->mas_b[0] > p->mas_b[1])
-			{
-				ft_sa(p);
-				ft_rr(p);
-			}
-			else
-			{
-				ft_sa(p);
-				ft_ra(p);
-			}
-		}
-		else if (p->mas_a[j + 1] == p->anum - 1 && p->mas_a[p->anum - 1] == 0)
-		{
-			p->goodline++;
-			if (p->bnum > 1 && p->mas_b[0] < p->mas_b[1])
-			{
-				ft_ss(p);
-				ft_rr(p);
-			}
-			if (p->bnum > 1 && p->mas_b[0] > p->mas_b[1])
-			{
-				ft_sa(p);
-				ft_rr(p);
-			}
-			else
-			{
-				ft_sa(p);
-				ft_ra(p);
-			}
-		}
-		else if (p->mas_a[j] != p->mas_a[j + 1] - 1)
-		{
-			if (p->mas_a[j] == p->mas_a[p->anum - 1] + 1)
-			{
-				p->goodline++;
 				if (p->bnum > 1 && p->mas_b[0] > p->mas_b[1])
 					ft_rr(p);
 				else
@@ -263,32 +222,7 @@ void ft_firstcycle(t_p *p)
 		}
 	}
 	printf ("i = %d\n", i);
-}
-
-void		ft_how_much(t_p *p)
-{
-	if (p->anum <= 10)
-		p->howmuch = 5;
-	else if (p->anum <= 50)
-		p->howmuch = 8;
-	else if (p->anum <= 100)
-		p->howmuch = 10;
-	else if (p->anum <= 500)
-		p->howmuch = 25;
-	else if (p->anum <= 1000)
-		p->howmuch = 30;
-	else if (p->anum <= 10000)
-		p->howmuch = 160;
-	else
-		p->howmuch = 1000;
-}
-
-void		ft_whattodo(t_p *p)
-{
 	printf ("p->bnum = %d\n", p->bnum);
-	ft_how_much(p);
-	ft_firstcycle(p);
-	ft_printstacks(p);
 }
 
 
@@ -296,5 +230,7 @@ void			ft_worker(t_p *p)
 {
 	ft_sorting(p);
 	ft_value_of_position(p);
-	ft_whattodo(p);
+	ft_whirling(p);
+	ft_find_zero_pos(p);
+	ft_printstacks(p);
 }
