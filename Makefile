@@ -4,19 +4,19 @@ SRCS = 	main.c\
 		parser.c\
 		worker.c\
 		freebufs.c\
-		# supfun1.c\
-		# supfun2.c\
-		# ft_pa_supfun3.c\
-		# ft_pb_supfun4.c
+		supfun1.c\
+		supfun2.c\
+		ft_pa_supfun3.c\
+		ft_pb_supfun4.c
 
 OBJ = 	main.o\
 		parser.o\
 		worker.o\
 		freebufs.o\
-		# supfun1.o\
-		# supfun2.o\
-		# ft_pa_supfun3.o\
-		# ft_pb_supfun4.o
+		supfun1.o\
+		supfun2.o\
+		ft_pa_supfun3.o\
+		ft_pb_supfun4.o
 
 INC = includes/
 

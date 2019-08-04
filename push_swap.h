@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 22:29:47 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/02 08:13:41 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/04 01:47:49 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct	s_p
 	int		anum;
 	int		bnum;
 	int		goodline;
+	int		howmuch;
 	int		max;
 }				t_p;
 
@@ -43,5 +44,6 @@ void			ft_rrr(t_p *p);
 void			ft_error();
 void			ft_freebufs(t_p *p);
 void			ft_intstrdel(int **as);
+void			ft_printstacks(t_p *p); // delete after finishing
 
 #endif
