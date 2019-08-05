@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/30 00:30:53 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/04 01:47:26 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/05 16:59:13 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_rr(t_p *p)
 {
 	ft_ra(p);
 	ft_rb(p);
+	write(1, "rr\n", 3);
 }
 
 void	ft_rra(t_p *p)
@@ -37,6 +38,7 @@ void	ft_rra(t_p *p)
 			i++;
 		}
 	}
+	write(1, "rra\n", 4);
 }
 
 void	ft_rrb(t_p *p)
@@ -58,12 +60,14 @@ void	ft_rrb(t_p *p)
 			i++;
 		}
 	}
+	write(1, "rrb\n", 4);
 }
 
 void	ft_rrr(t_p *p)
 {
 	ft_rra(p);
 	ft_rrb(p);
+	write(1, "rrr\n", 4);
 }
 
 

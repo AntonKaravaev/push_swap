@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/30 00:28:18 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/02 04:18:33 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/05 19:23:15 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@ void	ft_sa(t_p *p)
 
 	if (p->anum >= 2)
 	{
-		if (p->mas_a[0] > p->mas_a[1])
-		{
-			temp = p->mas_a[0];
-			p->mas_a[0] = p->mas_a[1];
-			p->mas_a[1] = temp;
-		}
+		temp = p->mas_a[0];
+		p->mas_a[0] = p->mas_a[1];
+		p->mas_a[1] = temp;
 	}
+	write(1, "sa\n", 3);
 }
 
 void	ft_sb(t_p *p)
@@ -33,13 +31,11 @@ void	ft_sb(t_p *p)
 
 	if (p->bnum >= 2)
 	{
-		if (p->mas_b[0] > p->mas_b[1])
-		{
-			temp = p->mas_a[0];
-			p->mas_b[0] = p->mas_b[1];
-			p->mas_b[1] = temp;
-		}
+		temp = p->mas_a[0];
+		p->mas_b[0] = p->mas_b[1];
+		p->mas_b[1] = temp;
 	}
+	write(1, "sb\n", 3);
 }
 
 void	ft_ss(t_p *p)
@@ -48,22 +44,17 @@ void	ft_ss(t_p *p)
 
 	if (p->anum >= 2)
 	{
-		if (p->mas_a[0] > p->mas_a[1])
-		{
-			temp = p->mas_a[0];
-			p->mas_a[0] = p->mas_a[1];
-			p->mas_a[1] = temp;
-		}
+		temp = p->mas_a[0];
+		p->mas_a[0] = p->mas_a[1];
+		p->mas_a[1] = temp;
 	}
 	if (p->bnum >= 2)
 	{
-		if (p->mas_b[0] > p->mas_b[1])
-		{
-			temp = p->mas_a[0];
-			p->mas_b[0] = p->mas_b[1];
-			p->mas_b[1] = temp;
-		}
+		temp = p->mas_b[0];
+		p->mas_b[0] = p->mas_b[1];
+		p->mas_b[1] = temp;
 	}
+	write(1, "ss\n", 3);
 }
 
 void	ft_ra(t_p *p)
@@ -82,6 +73,7 @@ void	ft_ra(t_p *p)
 		}
 		p->mas_a[i] = temp;
 	}
+	write(1, "ra\n", 3);
 }
 
 void	ft_rb(t_p *p)
@@ -100,4 +92,5 @@ void	ft_rb(t_p *p)
 		}
 		p->mas_b[i] = temp;
 	}
+	write(1, "rb\n", 3);
 }

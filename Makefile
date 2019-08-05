@@ -3,6 +3,7 @@ NAME = push_swap
 SRCS = 	main.c\
 		parser.c\
 		worker.c\
+		worker_sup.c\
 		freebufs.c\
 		supfun1.c\
 		supfun2.c\
@@ -12,6 +13,7 @@ SRCS = 	main.c\
 OBJ = 	main.o\
 		parser.o\
 		worker.o\
+		worker_sup.o\
 		freebufs.o\
 		supfun1.o\
 		supfun2.o\
