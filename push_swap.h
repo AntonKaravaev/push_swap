@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 22:29:47 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/05 18:27:19 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/06 14:19:57 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@ typedef struct	s_p
 
 int				main(int argc, char *argv[]);
 void			ft_parser(int ac, char **line, t_p *p);
+void			ft_sorting(t_p *p);
 void			ft_worker(t_p *p);
-int				ft_w1(t_p *p);
+void			ft_whirling(t_p *p);
+void			ft_from_b_to_a(t_p *p);
+int				ft_cycle_ok(t_p *p);
 void			ft_sa(t_p *p);
 void			ft_sb(t_p *p);
 void			ft_ss(t_p *p);
