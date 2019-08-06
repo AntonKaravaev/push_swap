@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 22:29:47 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/06 14:19:57 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/06 22:17:02 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,20 @@
 typedef struct	s_p
 {
 	int		*mas_a;
+	int		*mas_a2;
 	int		*mas_b;
 	int		*sorted;
+	int		cycle_ok : 1;
 	int		anum;
 	int		bnum;
 	int		goodline;
 	int		howmuch;
 	int		zeropos;
-	int		connection;
 	int		max;
+	int		circle;
+	int		begin;
+	int		end;
+	int		bestconnections;
 }				t_p;
 
 int				main(int argc, char *argv[]);

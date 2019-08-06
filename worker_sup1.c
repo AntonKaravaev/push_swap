@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 18:24:01 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/06 17:12:25 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/06 22:03:51 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,7 @@ void			ft_from_b_to_a(t_p *p)
 	while (++i < p->bnum)
 	{
 		if (p->mas_a[p->anum - 1] + 1 == p->mas_b[i]
-			|| ((p->mas_a[p->anum - 1] == p->max) && p->mas_b[i] == 0)
-			|| p->mas_a[0] + 1 == p->mas_b[i])
+			|| ((p->mas_a[p->anum - 1] == p->max) && p->mas_b[i] == 0))
 		{
 			if (ft_find_optimal_way(p, i))
 				ft_pa(p);
