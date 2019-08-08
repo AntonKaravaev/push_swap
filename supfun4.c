@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   supfun1.c                                          :+:      :+:    :+:   */
+/*   supfun4.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/30 00:28:18 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/08 03:09:23 by crenly-b         ###   ########.fr       */
+/*   Created: 2019/08/07 18:58:21 by crenly-b          #+#    #+#             */
+/*   Updated: 2019/08/07 19:20:16 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
-void	ft_sa(t_p *p)
+void	ft_sa2(t_p *p)
 {
 	int temp;
 
 	if (p->anum >= 2)
 	{
-			temp = p->mas_a[0];
-			p->mas_a[0] = p->mas_a[1];
-			p->mas_a[1] = temp;
+		temp = p->mas_a[0];
+		p->mas_a[0] = p->mas_a[1];
+		p->mas_a[1] = temp;
 	}
 }
 
-void	ft_sb(t_p *p)
+void	ft_sb2(t_p *p)
 {
 	int temp;
 
@@ -36,7 +36,7 @@ void	ft_sb(t_p *p)
 	}
 }
 
-void	ft_ss(t_p *p)
+void	ft_ss2(t_p *p)
 {
 	int temp;
 
@@ -48,44 +48,20 @@ void	ft_ss(t_p *p)
 	}
 	if (p->bnum >= 2)
 	{
-		temp = p->mas_a[0];
+		temp = p->mas_b[0];
 		p->mas_b[0] = p->mas_b[1];
 		p->mas_b[1] = temp;
 	}
 }
 
-void	ft_ra(t_p *p)
+void	ft_rr2(t_p *p)
 {
-	int i;
-	int temp;
-
-	i = 0;
-	if (p->anum > 0)
-	{
-		temp = p->mas_a[0];
-		while (i < p->anum - 1)
-		{
-			p->mas_a[i] = p->mas_a[i + 1];
-			i++;
-		}
-		p->mas_a[i] = temp;
-	}
+	ft_ra2(p);
+	ft_rb2(p);
 }
 
-void	ft_rb(t_p *p)
+void	ft_rrr2(t_p *p)
 {
-	int i;
-	int temp;
-
-	i = 0;
-	if (p->bnum > 0)
-	{
-		temp = p->mas_b[0];
-		while (i < p->bnum - 1)
-		{
-			p->mas_b[i] = p->mas_b[i + 1];
-			i++;
-		}
-		p->mas_b[i] = temp;
-	}
+	ft_rra2(p);
+	ft_rrb2(p);
 }

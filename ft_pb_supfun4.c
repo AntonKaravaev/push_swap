@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 19:49:25 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/06 21:40:31 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/07 19:18:32 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,15 @@ void		ft_pb(t_p *p)
 		ft_pb_sup2(p);
 	}
 	write(1, "pb\n", 3);
+}
+
+void		ft_pb2(t_p *p)
+{
+	if (p->anum > 0)
+	{
+		p->anum--;
+		p->bnum++;
+		ft_pb_sup1(p);
+		ft_pb_sup2(p);
+	}
 }

@@ -6,13 +6,13 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 13:36:38 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/06 22:06:34 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/07 19:01:12 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_rra2(t_p *p)
+void	ft_rra2(t_p *p)
 {
 	int i;
 	int temp;
@@ -33,7 +33,7 @@ static void	ft_rra2(t_p *p)
 	}
 }
 
-static void	ft_rrb2(t_p *p)
+void	ft_rrb2(t_p *p)
 {
 	int i;
 	int temp;
