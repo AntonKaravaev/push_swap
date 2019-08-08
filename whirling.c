@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 20:30:50 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/08 02:47:48 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/08 15:51:36 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void			ft_whirling_2(t_p *p)
 	int i;
 
 	i = -1;
-	printf("p->bnum = %d\n", p->bnum);
+	printf("ft_whirling_2! p->bnum = %d\n", p->bnum);
 	p->cycle_ok = 0;
 	while (++i < p->max + 2)
 	{

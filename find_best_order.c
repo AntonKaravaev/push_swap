@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 18:53:03 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/07 20:36:15 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/08 15:57:27 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void		ft_fb_sup2_1(t_p *p, int *i, int *j, int *connections)
 		if (p->circle == 1 && *i == 0)
 		{
 			p->end = *i + *j;
-			p->circle = 0;
+			p->circle++;
 		}
 		else
 		{
@@ -94,22 +94,36 @@ int			ft_findbestorder(t_p *p)
 	int i;
 	int j;
 
+	i = -1; // delete AFTER finishinig
+	printf("MY Circle!\n");
+	while (++i < p->anum2)
+		printf("p->mas_a2[%d] = %d\n", i, p->mas_a2[i]);
+	printf("*************************************\n");
+
+
 	i = 0;
 	connections = 1;
+
 	ft_findbestorder_sup1(p, &i, &j, &connections);
 	ft_findbestorder_sup2(p, &i, &j, &connections);
 	printf("-----------------------\n");
 	printf("| p->begin = %d        |\n", p->begin);
 	printf("| p->end = %d          |\n", p->end);
 	printf("-----------------------\n");
+	if (p->circle == 2)
+		p->circle = 1;
+	else
+		p->circle= 0;
 	if (p->bestconnections >= p->anum)
 	{
+		printf("ClapClap1\n");
 		printf("p->anum = %d, p->bestconnections = %d \n", p->anum, p->bestconnections);
 		printf("All in stack are good \n");
 		return (1);
 	}
 	if (p->circle == 0)
 	{
+		printf("ClapClap2\n");
 		i = p->begin;
 		while (i <= p->end)
 		{
@@ -119,6 +133,7 @@ int			ft_findbestorder(t_p *p)
 	}
 	else
 	{
+		printf("ClapClap\n");
 		i = p->begin;
 		while (i < p->anum)
 		{
@@ -126,7 +141,7 @@ int			ft_findbestorder(t_p *p)
 			i++;
 		}
 		i = 0;
-		while (i <= p->end)
+		while (i < p->end + 1)
 		{
 			printf("p->mas_a[%d] = %d\n", i, p->mas_a[i]);
 			i++;

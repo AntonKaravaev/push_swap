@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 22:39:13 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/08 03:02:03 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/08 16:01:47 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,26 @@ void			ft_check_bad_numbers(t_p *p)
 				ft_bad_buf_fill_in(p, p->mas_a2[i - 1]);
 		}
 	}
+	else
+	{
+		i = p->begin;
+		if (i > p->end + 1)
+		{
+			number = p->mas_a2[i];
+			while (i > p->end + 1)
+			{
+				if (number > p->mas_a2[i - 1])
+					number = p->mas_a2[i - 1];
+				else
+					ft_bad_buf_fill_in(p, p->mas_a2[i - 1]);
+				i--;
+			}
+		}
+	}
+
+	i = -1; // delete AFTER finishinig
+	while (++i < p->bad_numbers)
+		printf("p->bad_buf[%d] = %d\n", i, p->bad_buf[i]);
 }
 
 void			ft_preworker(t_p *p)
