@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 13:36:38 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/07 19:01:12 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/09 03:13:50 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	ft_rrr(t_p *p)
 	ft_rrb2(p);
 	write(1, "rrr\n", 4);
 }
-
 
 void	ft_printstacks(t_p *p)
 {

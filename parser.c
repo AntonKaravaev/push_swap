@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 02:29:50 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/06 21:40:27 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/09 05:45:20 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,6 @@ void			ft_parser(int ac, char **line, t_p *p)
 	int	i;
 
 	i = 0;
-	p->anum = 0;
-	p->bnum = 0;
-	p->mas_a = NULL;
-	p->mas_b = NULL;
 	if (ac == 2)
 		ft_parseoneline(&line[1], p);
 	else
