@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/30 00:28:18 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/08 03:09:23 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/11 03:45:15 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	ft_sa(t_p *p)
 
 	if (p->anum >= 2)
 	{
-			temp = p->mas_a[0];
-			p->mas_a[0] = p->mas_a[1];
-			p->mas_a[1] = temp;
+		temp = p->mas_a[0];
+		p->mas_a[0] = p->mas_a[1];
+		p->mas_a[1] = temp;
 	}
 }
 

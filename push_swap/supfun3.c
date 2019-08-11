@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 13:36:38 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/09 03:13:50 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/11 03:25:03 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,22 +59,4 @@ void	ft_rrr(t_p *p)
 	ft_rra2(p);
 	ft_rrb2(p);
 	write(1, "rrr\n", 4);
-}
-
-void	ft_printstacks(t_p *p)
-{
-	int i;
-
-	i = -1;
-	while(++i < p->anum)
-	{
-		printf("p->mas_a[%d] = %d\n", i, p->mas_a[i]);
-	}
-	printf("\n");
-	i = -1;
-	while(++i < p->bnum)
-	{
-		printf("p->mas_b[%d] = %d\n", i, p->mas_b[i]);
-	}
-	printf("\n");
 }

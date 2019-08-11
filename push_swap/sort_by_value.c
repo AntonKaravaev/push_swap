@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 18:24:01 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/09 05:45:31 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/11 03:31:39 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ static void		ft_value_of_position(t_p *p)
 			}
 		}
 	}
+	p->max = p->anum - 1;
 }
 
 void			ft_sorting(t_p *p)

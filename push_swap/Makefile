@@ -4,7 +4,8 @@ SRCS = 	main.c\
 		parser.c\
 		worker.c\
 		sort_by_value.c\
-		whirling.c\
+		frombtoa.c\
+		posoneelem.c\
 		freebufs.c\
 		supfun1.c\
 		supfun2.c\
@@ -16,7 +17,8 @@ OBJ = 	main.o\
 		parser.o\
 		worker.o\
 		sort_by_value.o\
-		whirling.o\
+		frombtoa.o\
+		posoneelem.o\
 		freebufs.o\
 		supfun1.o\
 		supfun2.o\

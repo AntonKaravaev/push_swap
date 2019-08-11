@@ -6,7 +6,7 @@
 /*   By: crenly-b <crenly-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 22:25:23 by crenly-b          #+#    #+#             */
-/*   Updated: 2019/08/09 08:16:36 by crenly-b         ###   ########.fr       */
+/*   Updated: 2019/08/11 03:25:59 by crenly-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ static void	ft_p_fill_in(t_p *p)
 	p->best_number = 0;
 	p->best_score = 0;
 	p->elem_to_move = 0;
+	p->best_ra2 = 0;
+	p->best_rra2 = 0;
+	p->best_rb2 = 0;
+	p->best_rrb2 = 0;
+	p->way = 0;
 }
 
 int			main(int argc, char *argv[])
@@ -45,7 +50,7 @@ int			main(int argc, char *argv[])
 	{
 		ft_parser(argc, argv, &p);
 		ft_worker(&p);
-		// ft_freebufs(&p);
+		ft_freebufs(&p);
 	}
 	return (0);
 }
